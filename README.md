@@ -1,48 +1,44 @@
-# Skills Repository: Web Full Stack, Staging & Production (Cybersecurity Focused)
+# Ecosistema de Skills: PicTik SaaS
 
-## Descripción
-Este repositorio sirve como una base de conocimientos y colección de habilidades (skills) centradas en el ciclo completo de desarrollo de software (Full Stack Web Development), la configuración de entornos de pruebas (Staging) y el despliegue en producción, todo ello englobado bajo una sólida perspectiva de **Ciberseguridad**.
+Este directorio contiene la inteligencia operativa, reglas de negocio y estándares de seguridad para el equipo de desarrollo (tanto humano como IA) de **PicTik**, una plataforma SaaS de entrega fotográfica.
 
-El objetivo principal es documentar, estandarizar y aplicar las mejores prácticas de seguridad en cada fase del desarrollo y despliegue de aplicaciones web.
+## 🎯 Propósito
 
-## Áreas Principales
+Las *skills* aquí definidas garantizan que todo código escrito, revisado o desplegado para PicTik cumpla con un estándar de oro en ciberseguridad, rendimiento, y normativas de privacidad de datos (GDPR y LATAM).
 
-### 1. Desarrollo Web Full Stack (Frontend & Backend)
-*   **Desarrollo Seguro:** Prácticas de codificación segura orientadas a mitigar las vulnerabilidades del OWASP Top 10.
-*   **Frontend:** Prevención de XSS, CSRF, configuración segura de CORS y políticas CSP (Content Security Policy).
-*   **Backend:** Validación estricta de entradas, sanitización, manejo seguro de sesiones, autenticación y autorización robustas (OAuth2, JWT, MFA).
-*   **Bases de Datos:** Prevención de Inyección SQL (SQLi), cifrado de datos sensibles en reposo y en tránsito.
+Al operar sobre este repositorio, el agente de IA lee dinámicamente estas skills para aplicar las mejores prácticas sin depender del conocimiento estático de sus modelos base.
 
-### 2. Entornos de Staging (Pruebas y Pre-producción)
-*   **Replicación Segura:** Creación de entornos fieles a producción sin exponer datos reales sensibles (uso de enmascaramiento y anonimización de datos).
-*   **Testing de Seguridad (DevSecOps):** Integración de análisis estático (SAST), dinámico (DAST) y de dependencias (SCA) en los pipelines de CI/CD.
-*   **Control de Accesos:** Políticas de mínimo privilegio y restricción de acceso a los entornos de staging estrictamente para personal autorizado y herramientas automatizadas.
-*   **Auditoría de Configuración:** Verificación y validación de que las configuraciones de seguridad (hardening) se cumplen antes de la promoción a producción.
+## 📂 Estructura de Skills
 
-### 3. Entornos de Producción y Operaciones
-*   **Despliegue Seguro:** Pipelines de despliegue inmutables y automatizados.
-*   **Hardening de Infraestructura:** Configuración segura de servidores (Linux/Windows), contenedores (Docker, Kubernetes) y servicios Cloud.
-*   **Gestión de Secretos:** Almacenamiento y rotación segura de credenciales, tokens y certificados utilizando herramientas especializadas (ej. HashiCorp Vault, AWS Secrets Manager).
-*   **Monitoreo, Logging y Respuesta:** Implementación de trazas de auditoría, recolección centralizada de logs, monitoreo continuo y alertas tempranas ante anomalías.
-*   **Protección Perimetral:** Despliegue de WAF (Web Application Firewall), protección contra ataques DDoS y gestión de redes seguras.
+El ecosistema está dividido en 4 capas operativas y 1 transversal, compuesto por 10 skills:
 
-## Estructura del Repositorio
-*(Aquí puedes detallar cómo se organizan las carpetas en tu repositorio. Ejemplo:)*
-*   `/development`: Skills y guías de código seguro.
-*   `/staging`: Configuraciones de entornos de prueba, scripts de anonimización.
-*   `/production`: Manifiestos de infraestructura como código (IaC), configuraciones de hardening.
-*   `/security-tools`: Scripts y guías de uso de herramientas de escaneo y auditoría.
+| Capa | Skill | Descripción |
+|------|-------|-------------|
+| **1. Fundamentos** | `fullstack-web-dev` | Decisiones de arquitectura, React 19, tRPC, Vite, y Drizzle ORM. |
+| **1. Fundamentos** | `coding-best-practices` | Principios SOLID, Clean Code, TypeScript estricto. |
+| **2. Seguridad & Privacidad** | `cybersecurity-gold-standards` | OWASP Top 10, NIST CSF, Headers HTTP y mitigaciones técnicas. |
+| **2. Seguridad & Privacidad** | `data-privacy-compliance` | Cumplimiento de GDPR y normativas de LATAM (CO, MX, EC, AR, CL). |
+| **3. Integración** | `rapyd-payment-integration` | Integración, testing y paso a producción con la pasarela Rapyd (Hosted Checkout). |
+| **4. DevSecOps** | `recursive-code-review` | Protocolo automatizado en 4 pasadas (sintaxis, lógica, seguridad, calidad). |
+| **4. DevSecOps** | `staging-environment` | Pipeline de CI/CD, data masking y despliegue a entorno previo. |
+| **4. DevSecOps** | `security-audit` | Checklists pre-despliegue (OWASP ASVS), dependency audit y pentesting automatizado. |
+| **4. DevSecOps** | `production-deployment` | Despliegue en Hetzner CX22, Cloudflare R2, monitoreo e Incident Response. |
+| **Transversal** | `continuous-improvement` | Protocolo de 7 preguntas de cuestionamiento lógico y registro de decisiones (ADR). |
 
-## Cómo Empezar
-1. Clona el repositorio en tu máquina local.
-2. Explora las carpetas según el área temática de tu interés.
-3. Revisa la documentación específica dentro de cada módulo para poner en práctica las habilidades documentadas.
+## 🚀 Cómo usar este sistema
 
-## Contribuciones
-La seguridad es un esfuerzo de equipo. Si deseas aportar nuevas guías, corregir vulnerabilidades o mejorar las prácticas existentes:
-1. Crea una rama (branch) nueva (`feature/mejora-seguridad`).
-2. Realiza tus cambios.
-3. Abre un Pull Request (PR) detallando las mejoras para su revisión por pares.
+### Para Humanos
+Si eres un desarrollador, lee la skill correspondiente antes de modificar una pieza crítica del sistema (ej. si vas a tocar pagos, lee `rapyd-payment-integration/SKILL.md`). Cuando debas tomar una decisión técnica que afecte la arquitectura, usa la plantilla de **ADR** definida en `continuous-improvement`.
 
----
-*La ciberseguridad en el desarrollo no es una fase final, es un proceso continuo desde el diseño hasta la operación.*
+### Para Agentes IA
+- **Antes de escribir código**: Carga las reglas de `fullstack-web-dev` y `coding-best-practices`.
+- **Durante la revisión de un PR**: Invoca `recursive-code-review`.
+- **Antes de una decisión arquitectónica**: Ejecuta el protocolo de cuestionamiento lógico en `continuous-improvement`.
+- **Para preparar un release**: Sigue secuencialmente `staging-environment` → `security-audit` → `production-deployment`.
+
+## 🔒 Reglas de Oro de PicTik
+
+1. **La seguridad no es opcional**: Toda interacción con la DB debe usar Drizzle (nunca raw SQL). Toda entrada debe validarse con Zod. Todo endpoint de pago requiere validación HMAC de Rapyd.
+2. **Minimización de Datos**: Solo recopilamos los datos personales estrictamente necesarios. Las fotos son datos biométricos potenciales.
+3. **Secreto Absoluto**: NUNCA hardcodear contraseñas. NUNCA inyectar claves privadas (ej. RAPYD_SECRET_KEY) en el build frontend. NUNCA logear IP en texto plano o datos de pago.
+4. **Cuestionamiento Constante**: Si una instrucción va en contra de la seguridad o el performance del proyecto, el agente DEBE cuestionarla y proponer la alternativa segura.
