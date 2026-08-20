@@ -1,0 +1,16 @@
+for file in *.md; do
+  # Elimina la extensión .md para usar el nombre como nombre del repo
+  repo_name="${file%.md}"
+  
+  # Crea el nuevo repositorio público en GitHub
+  gh repo create "$repo_name" --public
+  
+  # Clona el repo recién creado, mueve el archivo .md y hace push
+  gh repo clone "$repo_name"
+  mv "$file" "$repo_name/README.md"
+  cd "$repo_name"
+  git add README.md
+  git commit -m "Initial commit con $file"
+  git push origin main
+  cd ..
+done
